@@ -55,13 +55,16 @@ export default function ScanProduct() {
     setOpenWallet((prev) => !prev);
   };
 
-  const { data } = useReadContract({
-    functionName: 'verify',
-    args: [productId],
-    abi,
-    address: CONTRACT_ADDR,
-    watch: true,
-  });
+  // const { data } = useReadContract({
+  //   functionName: 'verify',
+  //   args: [productId],
+  //   abi,
+  //   address: CONTRACT_ADDR,
+  //   watch: true,
+  // });
+
+
+  const data = null
 
   useEffect(() => {
     const fetchData = async () => {
