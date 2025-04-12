@@ -28,41 +28,39 @@ export default function ProductPreview({ productId }: { productId: string }) {
   const [error, setError] = useState('');
   const [product, setProduct] = useState<Product | null>(null);
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      if (!productId) return;
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     if (!productId) return;
 
-      setLoading(true);
-      setError('');
+  //     setLoading(true);
+  //     setError('');
 
-      try {
-        const response = await fetch(`/api/scan/${productId}`);
-        const data = await response.json();
+  //     try {
+  //       const response = await fetch(`/api/scan/${productId}`);
+  //       const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error(data.error || 'Failed to fetch product details');
-        }
-        console.log(data);
-        if (data.success && data.product) {
-          setProduct(data.product);
-        }
-      } catch (err) {
-        setError(
-          err instanceof Error ? err.message : 'Failed to fetch product details'
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       if (!response.ok) {
+  //         throw new Error(data.error || 'Failed to fetch product details');
+  //       }
+  //       console.log(data);
+  //       if (data.success && data.product) {
+  //         setProduct(data.product);
+  //       }
+  //     } catch (err) {
+  //       setError(
+  //         err instanceof Error ? err.message : 'Failed to fetch product details'
+  //       );
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchProduct();
-  }, [productId]);
-  console.log(product);
-  const formattedManufactureDate = 'lorem'; // new Date(product.manufactureDate).toLocaleDateString();
-  const formattedExpiryDate = 'lorem'; //new Date(product.expiryDate).toLocaleDateString();
+  //   fetchProduct();
+  // }, [productId]);
+ 
 
   return (
-    <div className="pt-[64px]">
+    <div className="pt-[204px]  h-auto ">
       {isFlagging &&
         createPortal(
           <FlagProductModal
