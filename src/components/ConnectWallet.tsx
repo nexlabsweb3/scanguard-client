@@ -1,14 +1,14 @@
 import { roboto } from '@/app/fonts';
-import { useState } from 'react';
-import ConnectModal from './ConnectModal';
 import { WalletIcon } from '@heroicons/react/24/outline';
+import { useArgentConnect } from '@/app/hooks/argentSDKWallet/useArgentConnect';
 
 const ConnectWallet = (props: any) => {
-  const [isOpen, setisOpen] = useState<boolean>(false);
+  const { connect } = useArgentConnect();
+
   return (
     <div>
       <button
-        onClick={() => setisOpen(!isOpen)}
+        onClick={connect}
         className={` flex items-center  py-3 px-[1.25rem]
           place-items-center rounded-full gap-2 text-textPrimary
           font-medium text-base bg-primary ${roboto.variable} font-roboto`}
@@ -19,10 +19,6 @@ const ConnectWallet = (props: any) => {
         </div>
         CONNECT WALLET
       </button>
-
-      {isOpen && (
-        <ConnectModal isOpen={isOpen} onClose={() => setisOpen(false)} />
-      )}
     </div>
   );
 };

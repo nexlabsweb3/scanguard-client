@@ -6,6 +6,7 @@ import { bowlby_one, poppins, roboto } from './fonts';
 import Alert from '@/components/Alert';
 import { AlertProvider } from '@/hooks/useAlert';
 import { themeScript } from './theme-script';
+import { ArgentInvisibleProvider } from '@/provider/ArgentInvisibleProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
       >
         <StarknetProvider>
           <AlertProvider>
-            {children}
+            <ArgentInvisibleProvider>{children}</ArgentInvisibleProvider>
 
             <Alert />
           </AlertProvider>

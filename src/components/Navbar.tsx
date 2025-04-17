@@ -4,15 +4,13 @@ import { BrandImage } from '@/assets/landing-page';
 import Link from 'next/link';
 import ConnectWallet from './ConnectWallet';
 import { roboto } from '@/app/fonts';
-import ThemeToggle from './ThemeToggle';
-import { ScanIcon } from '@/assets/icons';
-import { useAlert } from '@/hooks/useAlert';
-import { useAccount } from '@starknet-react/core';
-import WalletBar from './WalletBar';
+import { useArgentAccount } from '@/app/hooks/argentSDKWallet/useArgentAccount';
+import ProfileBar from './profile/ProfileBar';
 
 const NavBar = (props: any) => {
-  const { showAlert } = useAlert();
-  const { account, address } = useAccount();
+  const { address, account } = useArgentAccount();
+
+  console.log(account, address)
 
   return (
     <nav
@@ -30,7 +28,13 @@ const NavBar = (props: any) => {
         </Link>
         <NavLinks />
       </div>
-      <div>{address ? <WalletBar /> : <ConnectWallet />}</div>
+      <div>
+        {address ? (
+          <ProfileBar address={address} disconnect={() => {}} />
+        ) : (
+          <ConnectWallet />
+        )}
+      </div>
     </nav>
   );
 };
