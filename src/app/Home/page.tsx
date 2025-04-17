@@ -1,12 +1,5 @@
 import React from 'react';
 
-const page = () => {
-  return (
-    <div>
-      {/* <HeroSection />
-      <ContentSection /> */}
-    </div>
-  );
-};
-
-export default page;
+export default function Page() {
+  return <div>page</div>;
+}

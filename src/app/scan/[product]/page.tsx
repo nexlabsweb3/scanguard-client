@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useAccount } from '@starknet-react/core';
-import ScanProduct from '@/components/Scan';
-import ConnectModal from '@/components/ConnectModal';
 import { useParams } from 'next/navigation';
 import ProductPreview from '@/components/ProductPreview';
 import Layout from '@/app/Home/layout';

@@ -1,14 +1,5 @@
-'use client';
-import Image from 'next/image';
-import {
-  DiscordIcon,
-  ScanIcon,
-  TelegramIcon,
-  TwitterIcon,
-} from '../../assets/icons';
+import React from 'react';
 
-import Link from 'next/link';
-
-export default function Home() {
-  return <main></main>;
+export default function Page() {
+  return <div></div>;
 }
