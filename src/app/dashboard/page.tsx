@@ -188,7 +188,7 @@ const AddProductModal = ({
   );
 };
 
-const Dashboard = () => {
+export default function Dashboard() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [activePage, setActivePage] = useState(1);
   const [activeMenu, setActiveMenu] = useState('menu');
@@ -390,6 +390,4 @@ const Dashboard = () => {
       </main>
     </div>
   );
-};
-
-export default Dashboard;
+}

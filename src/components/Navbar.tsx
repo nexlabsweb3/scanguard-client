@@ -10,7 +10,7 @@ import ProfileBar from './profile/ProfileBar';
 const NavBar = (props: any) => {
   const { address, account } = useArgentAccount();
 
-  console.log(account, address)
+  console.log(account, address);
 
   return (
     <nav

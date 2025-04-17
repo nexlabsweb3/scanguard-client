@@ -30,7 +30,6 @@ export default function ScanPage() {
       <main className=" w-full  bg-product-overview-mobile md:bg-product-overview bg-no-repeat bg-cover bg-center pb-[80px]">
         <ProductPreview productId="product" />
         {/* {open && <ScanProduct />} */}
-
       </main>
     </Layout>
   );

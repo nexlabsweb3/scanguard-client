@@ -1,8 +1,8 @@
-"use client";
-import useArgentWebWallet from "@/app/hooks/argentSDKWallet/useArgentWebWallet";
-import { UseArgentAccountResult } from "@/types";
-import React, { useState, useEffect, useCallback, createContext } from "react";
-import { AccountInterface } from "starknet";
+'use client';
+import useArgentWebWallet from '@/app/hooks/argentSDKWallet/useArgentWebWallet';
+import { UseArgentAccountResult } from '@/types';
+import React, { useState, useEffect, useCallback, createContext } from 'react';
+import { AccountInterface } from 'starknet';
 
 export const AccountContext = createContext<UseArgentAccountResult | undefined>(
   undefined
@@ -14,9 +14,9 @@ export const ArgentInvisibleProvider: React.FC<{
   const { argentWebWallet } = useArgentWebWallet();
 
   const [state, setState] = useState<
-    Omit<UseArgentAccountResult, "refreshAccount">
+    Omit<UseArgentAccountResult, 'refreshAccount'>
   >({
-    status: "disconnected"
+    status: 'disconnected',
   });
 
   const checkExistingConnection = useCallback(async () => {
@@ -24,50 +24,50 @@ export const ArgentInvisibleProvider: React.FC<{
       const response = await argentWebWallet.connect();
       if (!response) {
         setState({
-          status: "disconnected",
+          status: 'disconnected',
           account: undefined,
           address: undefined,
           isConnected: false,
           isConnecting: false,
           isDisconnected: true,
-          isReconnecting: false
+          isReconnecting: false,
         });
         return;
       }
 
       const { account } = response;
-      if (account.getSessionStatus() !== "VALID") {
+      if (account.getSessionStatus() !== 'VALID') {
         setState({
-          status: "disconnected",
+          status: 'disconnected',
           account: undefined,
           address: undefined,
           isConnected: false,
           isConnecting: false,
           isDisconnected: true,
-          isReconnecting: false
+          isReconnecting: false,
         });
         return;
       }
 
       setState({
-        status: "connected",
+        status: 'connected',
         account: account as unknown as AccountInterface,
         address: account.address,
         isConnected: true,
         isConnecting: false,
         isDisconnected: false,
-        isReconnecting: false
+        isReconnecting: false,
       });
     } catch (error) {
-      console.error("Connection error:", error);
+      console.error('Connection error:', error);
       setState({
-        status: "disconnected",
+        status: 'disconnected',
         account: undefined,
         address: undefined,
         isConnected: false,
         isConnecting: false,
         isDisconnected: true,
-        isReconnecting: false
+        isReconnecting: false,
       });
     }
   }, [argentWebWallet]);

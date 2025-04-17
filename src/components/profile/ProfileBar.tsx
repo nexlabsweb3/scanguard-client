@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { User } from "lucide-react";
+import { User } from 'lucide-react';
 
 type ProfileBarProps = {
   address: string;

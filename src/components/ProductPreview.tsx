@@ -57,7 +57,6 @@ export default function ProductPreview({ productId }: { productId: string }) {
 
   //   fetchProduct();
   // }, [productId]);
- 
 
   return (
     <div className="pt-[204px]  h-auto ">
