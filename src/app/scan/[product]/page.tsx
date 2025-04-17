@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useAccount } from '@starknet-react/core';
-import ScanProduct from '@/components/Scan';
-import ConnectModal from '@/components/ConnectModal';
 import { useParams } from 'next/navigation';
 import ProductPreview from '@/components/ProductPreview';
 import Layout from '@/app/Home/layout';
@@ -30,7 +28,6 @@ export default function ScanPage() {
       <main className=" w-full  bg-product-overview-mobile md:bg-product-overview bg-no-repeat bg-cover bg-center pb-[80px]">
         <ProductPreview productId="product" />
         {/* {open && <ScanProduct />} */}
-
       </main>
     </Layout>
   );

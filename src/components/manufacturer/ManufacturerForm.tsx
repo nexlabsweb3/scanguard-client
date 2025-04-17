@@ -1,3 +1,4 @@
+'use client';
 import {
   BuildingOffice2Icon,
   UserIcon,

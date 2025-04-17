@@ -2,13 +2,10 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { BsFillXDiamondFill } from 'react-icons/bs';
-import { HiMenuAlt3 } from 'react-icons/hi';
 import { IoSearchOutline, IoSettingsOutline } from 'react-icons/io5';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { FaPlus } from 'react-icons/fa';
-import girl from '@/assets/girl1.png';
 import boy from '@/assets/girl1.png';
-import icon from '@/assets/icon1.ico';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-datepicker';
@@ -188,7 +185,7 @@ const AddProductModal = ({
   );
 };
 
-const Dashboard = () => {
+export default function Dashboard() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [activePage, setActivePage] = useState(1);
   const [activeMenu, setActiveMenu] = useState('menu');
@@ -390,6 +387,4 @@ const Dashboard = () => {
       </main>
     </div>
   );
-};
-
-export default Dashboard;
+}

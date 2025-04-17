@@ -63,8 +63,7 @@ export default function ScanProduct() {
   //   watch: true,
   // });
 
-
-  const data = null
+  const data = null;
 
   useEffect(() => {
     const fetchData = async () => {
